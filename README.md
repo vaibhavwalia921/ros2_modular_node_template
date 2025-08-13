@@ -164,7 +164,7 @@ ros2_modular_node_template/
 │   │   └── middleware/         # ROS-specific code
 │   ├── src/                    # Source files
 │   ├── test/                   # Unit and integration tests
-│   ├── launch/                 # Launch files (to be added)
+│   ├── launch/                 # Launch files
 │   ├── config/                 # Configuration files
 │   ├── CMakeLists.txt          # Build configuration
 │   └── package.xml             # Package metadata
@@ -223,6 +223,6 @@ Apache License 2.0 - see [LICENSE](LICENSE) file for details.
 
 ## Documentation
 
-- [Architecture Documentation](docs/architecture.md) (to be completed)
-- [API Documentation](docs/api_documentation.md) (to be completed)
+- [Architecture Documentation](docs/architecture.md)
+- [API Documentation](docs/api_documentation.md)
 - [State Machine Diagram](docs/diagrams/state_machine.puml)
