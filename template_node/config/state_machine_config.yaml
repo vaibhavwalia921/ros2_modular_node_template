@@ -1,0 +1,9 @@
+state_machine:
+  initial_state: "UNINITIALIZED"
+  auto_initialize: true
+  error_recovery:
+    max_retries: 3
+    retry_delay_ms: 1000
+  transitions:
+    allow_emergency_stop_from_any_state: true
+    require_confirmation_for_maintenance: false

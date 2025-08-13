@@ -1,0 +1,10 @@
+template_node:
+  ros__parameters:
+    algorithm:
+      gain: 2.0
+      offset: 0.5
+      filter_coefficient: 0.7
+    processing:
+      rate_hz: 10.0
+    debug:
+      enable_logging: false

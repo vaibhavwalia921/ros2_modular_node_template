@@ -1,0 +1,27 @@
+@startuml
+[*] --> Unconfigured
+
+Unconfigured --> Configuring : configure()
+Configuring --> Inactive : [success]
+Configuring --> Unconfigured : [failure]
+
+Inactive --> Activating : activate()
+Activating --> Active : [success]
+Activating --> Inactive : [failure]
+
+Active --> Deactivating : deactivate()
+Deactivating --> Inactive : [success]
+Deactivating --> Active : [failure]
+
+Inactive --> CleaningUp : cleanup()
+CleaningUp --> Unconfigured : [success]
+CleaningUp --> Inactive : [failure]
+
+Unconfigured --> ShuttingDown : shutdown()
+Inactive --> ShuttingDown : shutdown()
+Active --> ShuttingDown : shutdown()
+
+ShuttingDown --> Finalized : [complete]
+Finalized --> [*]
+
+@enduml

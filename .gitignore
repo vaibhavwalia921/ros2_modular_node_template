@@ -1,0 +1,47 @@
+# Build directories
+build/
+install/
+log/
+
+# Compiled Object files
+*.o
+*.a
+*.so
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Colcon specific
+.colcon/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test results and coverage reports
+*.gcda
+*.gcno
+*.gcov
+test_results/

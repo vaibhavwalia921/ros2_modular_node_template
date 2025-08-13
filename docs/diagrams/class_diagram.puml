@@ -1,0 +1,72 @@
+@startuml
+package "Core Layer" {
+    interface IAlgorithm {
+        + process(request): ProcessingResult
+        + configure(params): bool
+        + validate_input(request): bool
+        + reset(): void
+        + get_status(): string
+    }
+    
+    class ExampleAlgorithm {
+        - gain: double
+        - offset: double
+        - filter_coefficient: double
+        + process(request): ProcessingResult
+        + configure(params): bool
+    }
+    
+    class StateMachine {
+        - current_state: OperationalState
+        - transition_table: map
+        + transition(trigger): bool
+        + get_current_state(): OperationalState
+        + register_callback(cb): void
+    }
+    
+    enum OperationalState {
+        UNINITIALIZED
+        IDLE
+        PROCESSING
+        ERROR
+        MAINTENANCE
+        EMERGENCY_STOP
+    }
+    
+    IAlgorithm <|-- ExampleAlgorithm
+    StateMachine --> OperationalState
+}
+
+package "Middleware Layer" {
+    class LifecycleNodeWrapper {
+        - algorithm: IAlgorithm
+        - state_machine: StateMachine
+        - parameter_handler: ParameterHandler
+        + on_configure(): CallbackReturn
+        + on_activate(): CallbackReturn
+        + on_deactivate(): CallbackReturn
+        + on_cleanup(): CallbackReturn
+        + on_shutdown(): CallbackReturn
+    }
+    
+    class ParameterHandler {
+        - parameters: map
+        - callbacks: map
+        + declare_parameters(): void
+        + get_parameter(name): T
+        + on_parameter_change(params): Result
+    }
+    
+    LifecycleNodeWrapper --> IAlgorithm
+    LifecycleNodeWrapper --> StateMachine
+    LifecycleNodeWrapper --> ParameterHandler
+}
+
+package "ROS 2 Framework" {
+    class LifecycleNode {
+        <<ROS 2>>
+    }
+    
+    LifecycleNodeWrapper --|> LifecycleNode
+}
+@enduml
