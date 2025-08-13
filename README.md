@@ -225,4 +225,9 @@ Apache License 2.0 - see [LICENSE](LICENSE) file for details.
 
 - [Architecture Documentation](docs/architecture.md)
 - [API Documentation](docs/api_documentation.md)
-- [State Machine Diagram](docs/diagrams/state_machine.puml)
+
+### Architecture Diagrams
+
+- [State Machine Diagram](docs/diagrams/state_machine.puml) | ![State Machine Diagram](docs/diagrams/state_machine.png)
+- [Class Diagram](docs/diagrams/class_diagram.puml) | ![Class Diagram](docs/diagrams/class_diagram.png)
+- [Lifecycle Diagram](docs/diagrams/lifecycle_diagram.puml) | ![Lifecycle Diagram](docs/diagrams/lifecycle_diagram.png)
