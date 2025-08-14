@@ -48,7 +48,7 @@ mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 
 # Clone this repository
-git clone <repository-url>
+git clone git@github.com:vaibhavwalia921/ros2_modular_node_template.git
 cd ..
 
 # Build the workspace
